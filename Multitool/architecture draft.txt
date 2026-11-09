@@ -1,0 +1,70 @@
+calculator
+	controller
+		react on events from view
+		send events to view
+		
+		=======================
+		
+		added single digit
+			store in operand1 or operand2
+		requested math operation: addition
+			store a fact about request
+			if operation is possible send to view state update on the current operation
+			check whether operation is possible
+				perform operation
+					inform view about state change
+		requested operation: perform("calculate")
+			check whether operation is possible
+				both operands present and a fact present about a math operation was requested
+			perform an operation
+				update the result value
+					view is subscribed on an update
+		
+	view
+		reacts on events from controller
+		sends events to controller
+		
+		=======================
+		
+		display
+		buttons digit
+		buttons mathemathical operations
+		buttons memory opearations
+		button reset
+		button perform operation
+		indicator memory is occupied
+		sign of the current math operation
+		
+		
+
+implementation		
+========================================================================
+
+Calculator
+
+CalculatorView
+	reflects operand1 state
+	reflects operand2 state
+	reflects selected mathOperation state
+	reflects calculation result state
+	reflects memoryIsOccupied state
+	notifies about user events: send notification about an event:
+		digit entered
+		math operation selected
+		calculation operation requested
+		reset operation requested
+		memory write operation requested
+		memory read operation requested
+	
+	
+DataUnit
+	//abstract: contains data parts; each part has an ID; upon updating a data part - 
+	
+DUCalculator
+	operand1: NOT_PRESENT, PRESENT
+	operand2: NOT_PRESENT, PRESENT
+	mathOperation: NONE, ADDITION, SUBSTRACTION, MULTIPLICATION, DIVISION
+	memory: NOT_PRESENT, PRESENT
+
+	
+

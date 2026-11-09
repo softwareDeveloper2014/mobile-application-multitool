@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<application xmlns="http://ns.adobe.com/air/application/50.2">
+    <id>com.simplecalculatorplusmultitool.site</id>
+    <versionNumber>1.0.0</versionNumber>
+    <filename>Multitool</filename>
+    <name>Multitool</name>
+    <description>Multitool Application</description>
+
+    <initialWindow>
+        <content>Multitool.swf</content>
+        <visible>true</visible>
+        <fullScreen>true</fullScreen>
+        <autoOrients>false</autoOrients>
+        <aspectRatio>portrait</aspectRatio>
+        <renderMode>direct</renderMode>
+    </initialWindow>
+	
+
+    <supportedProfiles>mobileDevice</supportedProfiles>
+
+        <android>
+        <manifestAdditions><![CDATA[
+            <manifest android:installLocation="auto">
+                <!-- Standard Android internet permissions -->
+                <uses-permission android:name="android.permission.INTERNET"/>
+                
+                <application>
+                    <!-- Ensures your app processes correctly across varied mobile screen densities -->
+                    <meta-data android:name="android.max_aspect" android:value="2.5" />
+                </application>
+            </manifest>
+        ]]></manifestAdditions>
+    </android>
+
+</application>

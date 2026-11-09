@@ -1,0 +1,2 @@
+class DUCalculatorView extends DataUnit {
+}
